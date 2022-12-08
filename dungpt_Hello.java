@@ -1,4 +1,4 @@
-public class Hello {
+public class dungpt_Hello {
     public static void main(String[] args){
         System.out.println("nguoi thu ");
         int i = 0;
@@ -10,4 +10,7 @@ public class Hello {
         
 
     }    
+    static public int tinhtong(){
+        return 1;
+    }
 }
