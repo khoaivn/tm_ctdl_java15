@@ -54,7 +54,7 @@ class Solution {
         return null;
     }
 }
-//136. Single Number
+//136. Single Number vòng for
 class Solution {
     public int singleNumber(int[] nums) {
         for(int i = 0; i < nums.length; i++){
@@ -71,7 +71,7 @@ class Solution {
         return 0;
     }
 }
-//136. Single Number
+//136. Single Number list
 class Solution {
     public int singleNumber(int[] nums) {
         Set<Integer> set = new HashSet<>();
