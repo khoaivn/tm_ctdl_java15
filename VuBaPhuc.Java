@@ -57,6 +57,23 @@ class Solution {
 //136. Single Number
 class Solution {
     public int singleNumber(int[] nums) {
+        for(int i = 0; i < nums.length; i++){
+            int a = 0;
+            for(int j= 0; j < nums.length; j++){
+               if(nums[i] == nums[j]){
+                   a++;
+               } 
+           }
+            if (a == 1){
+                return nums[i];
+            } 
+        }
+        return 0;
+    }
+}
+//136. Single Number
+class Solution {
+    public int singleNumber(int[] nums) {
         Set<Integer> set = new HashSet<>();
             for(int i : nums) {
                 if(set.contains(i)) {
