@@ -66,6 +66,7 @@ class Solution {
            }
             if (a == 1){
                 return nums[i];
+            
             } 
         }
         return 0;
@@ -83,6 +84,92 @@ class Solution {
                 }
             }
             return set.iterator().next();
+    }
+}
+// 1295. Find Numbers with Even Number of Digits
+class Solution {
+    public int findNumbers(int[] nums) {
+         int a = 0;
+        for(int i = 0; i < nums.length; i++) {
+            int b = nums[i];
+            int check = 0;
+            while(b>0) {
+                b = b/10;
+                check++;
+            }
+            if(check % 2 == 0) {
+                a++;
+            }
+        }
+        return a;
+    }
+}
+// 88. Merge Sorted Array
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        //1. lay tung phan tu mang 2
+        for(int j = 0; j < n; j++){
+            //2 tim vi tri chen mang 1
+            int i = 0;
+            while(i < m && nums1[i] < nums2[j]){
+                i++;
+            } 
+            // chen
+            for(int u = m; u > i; u--){
+                nums1[u] = nums1[u-1];
+            }
+            nums1[i] = nums2[j];
+            m++;
+        }
+    }
+}
+// 27. Remove Element
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int a = nums.length;
+        for(int i = 0; i < a; i++){
+            if(nums[i] == val){
+                nums[i] = nums[a - 1];
+                i--;
+                a--;
+            }
+        }
+    return a;
+    }
+}
+// 1480. Running Sum of 1d Array
+class Solution {
+    public int[] runningSum(int[] nums) {
+        int sumNums = 0;
+        int runningSums[] = new int [nums.length];
+        for (int i= 0; i < nums.length; i++){
+            sumNums += nums[i];
+            runningSums[i] = sumNums;
+        }
+        return runningSums;
+    }
+}
+// 387. First Unique Character in a String
+// bị Time Limit Exceeded
+class Solution {
+    public int firstUniqChar(String s) {
+        int nums[] = new int[s.length()];
+        int len = nums.length;
+        for(int i = 0; i < s.length(); i++){
+            nums[i] = s.charAt(i);
+        }
+        for(int i = 0; i < nums.length; i++){
+            int a = 0;
+            for(int j = 0; j < nums.length; j++){
+                if(nums[i] == nums[j]){
+                    a++;
+                }
+            }
+            if(a == 1){
+                return i;
+            }
+        }
+    return -1;
     }
 }
 public class Main {
