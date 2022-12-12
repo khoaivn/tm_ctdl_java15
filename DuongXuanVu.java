@@ -1,7 +1,43 @@
 public class DuongXuanVu {
     public static void main(String[] args) {
 
+        System.out.println(firstUniqChar("aabb"));
     }
+
+
+    public static int firstUniqChar(String s) {
+        char[] arr = new char[s.length()];
+        for (int i = 0; i < arr.length; i++){
+            arr[i] = s.charAt(i);
+        }
+        for (int i = 0; i < arr.length - 1; i++){
+            int check = 0;
+            int k = 0;
+            while(k < arr.length){
+                if (arr[i] == arr[k] && k != i){
+                    check++;
+                }
+                k++;
+            }
+            if( check == 0){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    // 1480. Running Sum of 1d Array
+
+    public int[] runningSum(int[] nums) {
+        int [] arr = new int[nums.length];
+        arr[0] = nums[0];
+        for (int i = 1; i < nums.length; i++){
+            arr[i] = arr[i-1] + nums[i];
+        }
+        return arr;
+    }
+
 
     // 2469. Convert the Temperature
     public double[] convertTemperature(double celsius) {
