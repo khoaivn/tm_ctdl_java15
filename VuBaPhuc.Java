@@ -173,6 +173,21 @@ class Solution {
     return -1;
     }
 }
+// 387. First Unique Character in a String
+class Solution {
+    public int firstUniqChar(String s) {
+            String newString = s;
+            while(s.length() > 0)
+            {
+                int curLength = s.length();
+                String first = String.valueOf(s.charAt(0));
+                s = s.replaceAll(first, "");
+                if(s.length() == curLength - 1)
+                    return newString.indexOf(first);
+            }
+            return -1;
+    }
+}
 // 283. Move Zeroes
 class Solution {
     public void moveZeroes(int[] nums) {
