@@ -1,26 +1,20 @@
 public class DuongXuanVu {
     public static void main(String[] args) {
 
-        System.out.println(firstUniqChar("aabb"));
+        System.out.println(firstUniqChar("loveleetcode"));
     }
 
 
+    // 387. First Unique Character in a String
     public static int firstUniqChar(String s) {
-        char[] arr = new char[s.length()];
-        for (int i = 0; i < arr.length; i++){
-            arr[i] = s.charAt(i);
-        }
-        for (int i = 0; i < arr.length - 1; i++){
-            int check = 0;
-            int k = 0;
-            while(k < arr.length){
-                if (arr[i] == arr[k] && k != i){
-                    check++;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j) && i != j){
+                    break;
                 }
-                k++;
-            }
-            if( check == 0){
-                return i;
+                if (j == s.length() -1 ){
+                    return i;
+                }
             }
         }
         return -1;
