@@ -1,7 +1,37 @@
 public class DuongXuanVu {
     public static void main(String[] args) {
 
+        System.out.println(firstUniqChar("loveleetcode"));
     }
+
+
+    // 387. First Unique Character in a String
+    public static int firstUniqChar(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j) && i != j){
+                    break;
+                }
+                if (j == s.length() -1 ){
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+
+    // 1480. Running Sum of 1d Array
+
+    public int[] runningSum(int[] nums) {
+        int [] arr = new int[nums.length];
+        arr[0] = nums[0];
+        for (int i = 1; i < nums.length; i++){
+            arr[i] = arr[i-1] + nums[i];
+        }
+        return arr;
+    }
+
 
     // 2469. Convert the Temperature
     public double[] convertTemperature(double celsius) {
