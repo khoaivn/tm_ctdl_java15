@@ -5,6 +5,20 @@ public class DuongXuanVu {
     }
 
 
+    //217. Contains Duplicate
+    public static boolean containsDuplicate(int[] nums) {
+        for(int i = 0; i < nums.length - 1; i++) {
+            int j = i+1;
+            while(j<nums.length){
+                if (nums[i] == nums[j]){
+                    return true;
+                }
+                j++;
+            }
+        }
+        return false;
+    }
+
     // 1051. Height Checker
     public static int heightChecker(int[] heights) {
         int count = 0;
